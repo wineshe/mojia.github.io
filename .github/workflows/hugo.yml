@@ -23,13 +23,15 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
       - name: Install Hugo
         uses: peaceiris/actions-hugo@v3
         with:
-          hugo-version: '0.154.5'
+          hugo-version: 'latest'
           extended: true
       - name: Build
-        run: hugo --minify
+        run: hugo --minify --logLevel info 2>&1 | tail -30
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
