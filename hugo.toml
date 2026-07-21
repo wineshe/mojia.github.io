@@ -1,6 +1,6 @@
 baseURL = "https://yarden.cn"
 languageCode = "en-US"
-title = "Jinxiang Xie"
+title = "Yarden Zhang"
 
 disableKinds = ["taxonomy", "term"]
 enableRobotsTXT = true
@@ -11,7 +11,7 @@ enableRobotsTXT = true
   page = ["HTML"]
 
 [params]
-  author = "Jinxiang Xie"
+  author = "Yarden Zhang"
   description = "Personal homepage of Jinxiang Xie, featuring research, publications, and contact information."
   github = "jxtse"
   twitter = "JinxiangTse"
@@ -21,7 +21,7 @@ enableRobotsTXT = true
   googlescholar = "https://scholar.google.com/citations?user=00fFhxQAAAAJ"
   avatar = "/images/android-chrome-512x512.jpg"
   bio = "Nanjing University"
-  location = "Nanjing, China"
+  location = "Beijing, China"
   repository = "wineshe/mojia.github.io"
   google_scholar_stats_use_cdn = true
 
