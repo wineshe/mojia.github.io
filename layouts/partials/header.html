@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', function() {
       }
       var target = document.getElementById(id);
       if (target) {
-        var offset = 80;
+        var offset = 60;
         var top = target.getBoundingClientRect().top + window.pageYOffset - offset;
         window.scrollTo({ top: top, behavior: 'smooth' });
       }
