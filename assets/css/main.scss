@@ -209,10 +209,11 @@ h1:before, h2:before, h3:before, h4:before, .anchor:before {
   font-weight: 700;
 }
 
-/* Sidebar + page gap consistent with blog article (gap: 2em) — override Susy floats to use flex on all pages */
+/* Sidebar + page gap consistent with blog article (gap: 2em) — override Susy floats to use flex on widescreen */
 @media (min-width: 925px) {
   #main {
     display: flex;
+    flex-wrap: wrap;
     gap: 2em;
   }
 
