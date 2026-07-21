@@ -209,6 +209,11 @@ h1:before, h2:before, h3:before, h4:before, .anchor:before {
   font-weight: 700;
 }
 
+/* Limit content width on main/home/blog-listing pages to match blog article width */
+article.page:not(.post-article) .page__inner-wrap {
+  max-width: 720px;
+}
+
 article.page.post-article {
   float: none !important;
   width: auto !important;
