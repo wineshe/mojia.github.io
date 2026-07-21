@@ -8,10 +8,35 @@
             <a href="/" target="_self">Homepage</a>
           </li>
 
-          <li class="masthead__menu-item"><a href="/blog/" target="_self"><strong>Blogs</strong></a></li>
+          <li class="masthead__menu-item"><a class="menu-link-bold" href="/#publications" target="_self"><strong>Publications</strong></a></li>
+          <li class="masthead__menu-item"><a class="menu-link-bold" href="/#open-source" target="_self"><strong>Open Source</strong></a></li>
+          <li class="masthead__menu-item"><a class="menu-link-bold" href="/#educations" target="_self"><strong>Educations</strong></a></li>
+          <li class="masthead__menu-item"><a class="menu-link-bold" href="/#internships" target="_self"><strong>Internships</strong></a></li>
+          <li class="masthead__menu-item"><a class="menu-link-bold" href="/#blogs" target="_self"><strong>Blogs</strong></a></li>
         </ul>
         <ul class="hidden-links hidden"></ul>
       </nav>
     </div>
   </div>
 </div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  document.querySelectorAll('.masthead__menu-item a[href^="/#"]').forEach(function(a) {
+    a.addEventListener('click', function(e) {
+      e.preventDefault();
+      var id = this.getAttribute('href').replace(/^\/?#/, '');
+      if (window.location.pathname !== '/') {
+        window.location.href = '/#' + id;
+        return;
+      }
+      var target = document.getElementById(id);
+      if (target) {
+        var offset = 60;
+        var top = target.getBoundingClientRect().top + window.pageYOffset - offset;
+        window.scrollTo({ top: top, behavior: 'smooth' });
+      }
+    });
+  });
+});
+</script>
