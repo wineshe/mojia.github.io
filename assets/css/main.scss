@@ -88,8 +88,8 @@
     }
 }
 
-$scroll_offset : 2em;
-h1:before, .anchor:before {
+$scroll_offset : 80px;
+h1:before, h2:before, h3:before, h4:before, .anchor:before {
     content: '';
     display: block;
     position: relative;

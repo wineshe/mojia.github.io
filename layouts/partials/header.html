@@ -31,7 +31,11 @@ document.addEventListener('DOMContentLoaded', function() {
         return;
       }
       var target = document.getElementById(id);
-      if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      if (target) {
+        var offset = 80;
+        var top = target.getBoundingClientRect().top + window.pageYOffset - offset;
+        window.scrollTo({ top: top, behavior: 'smooth' });
+      }
     });
   });
 });
