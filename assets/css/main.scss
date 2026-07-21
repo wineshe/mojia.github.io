@@ -199,3 +199,13 @@ h1:before, .anchor:before {
     display: none;
   }
 }
+
+/* ==========================================================================
+   Blog post — constrain content width for readability
+   ========================================================================== */
+
+article.page.post-article {
+  .page__inner-wrap {
+    max-width: 740px;
+  }
+}
