@@ -239,16 +239,17 @@ h1:before, h2:before, h3:before, h4:before, .anchor:before {
     }
   }
 
-  /* Blog post: need flex:row-reverse to keep TOC on the right */
+  /* Blog post: TOC on the right, content left-aligned at same position as homepage */
   #main > article.page.post-article {
     display: flex;
     flex-direction: row-reverse;
+    justify-content: flex-end;
     align-items: flex-start;
     gap: 1.5em;
 
     .page__inner-wrap {
-      flex: 1;
-      min-width: 0;
+      flex: none;
+      width: 720px;
       max-width: 720px;
     }
 
@@ -260,8 +261,7 @@ h1:before, h2:before, h3:before, h4:before, .anchor:before {
       top: 2em;
     }
 
-    @media (max-width: 1024px) {
-      flex-direction: column;
+    @media (max-width: 1200px) {
       .toc-container { display: none; }
     }
   }
