@@ -2,7 +2,6 @@ baseURL = "https://yarden.cn"
 languageCode = "en-US"
 title = "Jinxiang Xie"
 
-# Outputs
 disableKinds = ["taxonomy", "term"]
 enableRobotsTXT = true
 
@@ -41,29 +40,3 @@ enableRobotsTXT = true
 
 [permalinks]
   blog = "/blog/:title/"
-
-# Navigation menu
-[[menus.main]]
-  title = "about"
-  url = "/#about-me"
-
-[[menus.main]]
-  title = "publications"
-  url = "/#-publications"
-
-[[menus.main]]
-  title = "Open Source"
-  url = "/#-open-source"
-
-[[menus.main]]
-  title = "educations"
-  url = "/#-educations"
-
-[[menus.main]]
-  title = "internships"
-  url = "/#-internships"
-
-[[menus.main]]
-  title = "blogs"
-  url = "/#-blogs"
-

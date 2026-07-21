@@ -7,15 +7,33 @@
           <li class="masthead__menu-item masthead__menu-item--lg masthead__menu-home-item">
             <a href="/#about-me">Homepage</a>
           </li>
-          {{ $currentPage := . }}
-          {{ range .Site.Menus.main }}
-            <li class="masthead__menu-item">
-              <a href="{{ .URL }}">{{ .Title }}</a>
-            </li>
-          {{ end }}
+          <li class="masthead__menu-item"><a href="/#about-me">about</a></li>
+          <li class="masthead__menu-item"><a href="/#-publications">publications</a></li>
+          <li class="masthead__menu-item"><a href="/#-open-source">Open Source</a></li>
+          <li class="masthead__menu-item"><a href="/#-educations">educations</a></li>
+          <li class="masthead__menu-item"><a href="/#-internships">internships</a></li>
+          <li class="masthead__menu-item"><a href="/#-blogs">blogs</a></li>
         </ul>
         <ul class="hidden-links hidden"></ul>
       </nav>
     </div>
   </div>
 </div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  document.querySelectorAll('.masthead__menu-item a[href^="/#"]').forEach(function(a) {
+    a.addEventListener('click', function(e) {
+      e.preventDefault();
+      var id = this.getAttribute('href').replace('#', '');
+      // If we're on a different page, navigate first
+      if (window.location.pathname !== '/') {
+        window.location.href = '/#' + id;
+        return;
+      }
+      var target = document.getElementById(id);
+      if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+  });
+});
+</script>
