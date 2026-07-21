@@ -10,8 +10,8 @@
   /* Enhanced Global Style Variables */
   :root {
     --gradient-bg: linear-gradient(145deg, #ffffff, #f8f9fa);
-    --gradient-accent: linear-gradient(135deg, #FE667B 0%, #ff8599 50%, #a29bfe 100%);
-    --gradient-primary: linear-gradient(135deg, #012F63 0%, #1a4f8a 50%, #FE667B 100%);
+    --gradient-accent: linear-gradient(135deg, #c2714f 0%, #d48a6d 50%, #a29bfe 100%);
+    --gradient-primary: linear-gradient(135deg, #012F63 0%, #1a4f8a 50%, #c2714f 100%);
     --gradient-subtle: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
     --box-shadow: 0 1px 2px rgba(0,0,0,0.04), 0 4px 12px rgba(0,0,0,0.04), 0 0.8px 3px rgba(0,0,0,0.02);
     --box-shadow-hover: 0 4px 12px rgba(0,0,0,0.06), 0 12px 32px rgba(0,0,0,0.08);
@@ -23,9 +23,9 @@
     --spacing-unit: 1.4rem;
     
     /* 强调色CSS变量 */
-    --accent-color: #FE667B;
-    --accent-light: #ff8599;
-    --accent-dark: #e5475d;
+    --accent-color: #c2714f;
+    --accent-light: #d48a6d;
+    --accent-dark: #a85a3a;
     --primary-color: #012F63;
     --primary-light: #1a4f8a;
     
@@ -411,13 +411,13 @@
       left: 0;
       right: 0;
       height: 4px;
-      background: linear-gradient(135deg, #FE667B 0%, #ff8599 50%, #012F63 100%);
+      background: linear-gradient(135deg, #c2714f 0%, #d48a6d 50%, #012F63 100%);
     }
 
     &:hover {
       transform: translateY(-4px);
       box-shadow: 0 4px 12px rgba(0,0,0,0.06), 0 12px 32px rgba(0,0,0,0.08);
-      border-color: rgba(254, 102, 123, 0.25);
+      border-color: rgba(194, 113, 79, 0.25);
     }
 
     h3 {
@@ -478,7 +478,7 @@
     &:hover {
       transform: translateY(-3px);
       box-shadow: 0 4px 12px rgba(0,0,0,0.06), 0 12px 32px rgba(0,0,0,0.08);
-      border-color: rgba(254, 102, 123, 0.25);
+      border-color: rgba(194, 113, 79, 0.25);
     }
     
     .paper-box-text {
@@ -518,7 +518,7 @@
     color: $primary-color;
     margin: 3.5rem 0 1.25rem;
     padding-bottom: 0.6rem;
-    border-bottom: 1px solid rgba(254, 102, 123, 0.2);
+    border-bottom: 1px solid rgba(194, 113, 79, 0.2);
   }
   
   h2 {
