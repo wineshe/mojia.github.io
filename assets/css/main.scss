@@ -209,6 +209,13 @@ h1:before, h2:before, h3:before, h4:before, .anchor:before {
   font-weight: 700;
 }
 
+/* Hide section-jump nav items on mobile, keep only Homepage and Blogs */
+@media (max-width: 768px) {
+  .masthead__menu-item.nav-section {
+    display: none;
+  }
+}
+
 /* Sidebar + page gap consistent across all pages — override Susy floats to use flex on widescreen */
 @media (min-width: 925px) {
   #main {
