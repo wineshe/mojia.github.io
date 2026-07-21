@@ -214,6 +214,32 @@ article.page:not(.post-article) .page__inner-wrap {
   max-width: 720px;
 }
 
+/* Sidebar + page gap consistent with blog article (gap: 2em) */
+@media (min-width: 925px) {
+  #main:not(:has(.post-article)) {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2em;
+  }
+
+  #main:not(:has(.post-article)) > .sidebar {
+    width: calc(2 / 12 * 100%);
+    min-width: 160px;
+    float: none !important;
+    margin: 0;
+  }
+
+  #main:not(:has(.post-article)) > article.page {
+    flex: 1;
+    min-width: 0;
+    float: none !important;
+    width: auto !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+}
+
 article.page.post-article {
   float: none !important;
   width: auto !important;
