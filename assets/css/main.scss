@@ -121,3 +121,81 @@ h1:before, .anchor:before {
   padding-left: 0;
   padding-right: 0;
 }
+
+/* ==========================================================================
+   Table of Contents — right sidebar on blog posts
+   ========================================================================== */
+
+.toc-container {
+  margin-bottom: 1em;
+
+  @include breakpoint($large) {
+    position: sticky;
+    top: 2em;
+    float: right;
+    width: 14em;
+    margin-left: 2em;
+    z-index: 10;
+  }
+
+  @include breakpoint($x-large) {
+    margin-right: -16em;
+  }
+}
+
+.toc-title {
+  font-size: 0.85em;
+  font-weight: 700;
+  color: $primary-color;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.75em;
+  padding-bottom: 0.5em;
+  border-bottom: 2px solid $accent-color;
+}
+
+#TableOfContents {
+  font-size: 0.82em;
+  line-height: 1.6;
+}
+
+#TableOfContents ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+#TableOfContents li {
+  margin-bottom: 0.3em;
+}
+
+#TableOfContents a {
+  display: block;
+  color: $primary-color;
+  text-decoration: none;
+  padding: 0.2em 0.5em;
+  border-radius: 4px;
+  transition: all 0.15s ease;
+  border-left: 2px solid transparent;
+}
+
+#TableOfContents a:hover {
+  color: $accent-color;
+  background: rgba($accent-color, 0.06);
+  border-left-color: $accent-color;
+}
+
+#TableOfContents ul ul {
+  padding-left: 1em;
+}
+
+#TableOfContents ul ul a {
+  font-size: 0.93em;
+  color: #555;
+}
+
+@media (max-width: 1024px) {
+  .toc-container {
+    display: none;
+  }
+}

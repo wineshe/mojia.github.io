@@ -8,6 +8,12 @@
   {{ partial "sidebar.html" . }}
 
   <article class="page" itemscope itemtype="http://schema.org/BlogPosting">
+    {{ if .WordCount }}
+    <nav class="sidebar__right toc-container">
+      <h3 class="toc-title"><i class="fas fa-list"></i> Contents</h3>
+      {{ .TableOfContents }}
+    </nav>
+    {{ end }}
     <meta itemprop="headline" content="{{ .Title }}">
     <meta itemprop="datePublished" content="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">
 
