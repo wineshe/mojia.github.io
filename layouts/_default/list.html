@@ -1,0 +1,21 @@
+{{ define "main" }}
+{{ partial "browser-upgrade.html" . }}
+{{ partial "header.html" . }}
+
+<div id="main" role="main" style="padding-bottom: 3em;">
+  {{ if or (.Params.author_profile) (eq .Params.author_profile nil) }}
+  {{ partial "sidebar.html" . }}
+  {{ end }}
+
+  <article class="page{{ if eq .Params.author_profile false }} page--full{{ end }}" itemscope itemtype="http://schema.org/CreativeWork">
+    <div class="page__inner-wrap">
+      <section class="page__content" itemprop="text">
+        {{ .Content }}
+      </section>
+    </div>
+  </article>
+</div>
+
+{{ partial "scripts.html" . }}
+{{ partial "footer.html" . }}
+{{ end }}

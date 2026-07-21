@@ -1,0 +1,56 @@
+<div class="sidebar sticky">
+  <div itemscope itemtype="http://schema.org/Person" class="profile_box">
+    <div class="author__avatar">
+      <img src="{{ .Site.Params.avatar }}" class="author__avatar" alt="{{ .Site.Params.author }}">
+    </div>
+    <div class="author__content">
+      <h3 class="author__name">{{ .Site.Params.author }}</h3>
+      {{ with .Site.Params.bio }}<p class="author__bio">{{ . }}</p>{{ end }}
+    </div>
+    <div class="author__urls-wrapper">
+      <ul class="author__urls social-icons">
+        {{ with .Site.Params.location }}
+          <li><i class="fa fa-fw fa-map-marker" aria-hidden="true"></i> {{ . }}</li>
+        {{ end }}
+        {{ with .Site.Params.email }}
+          <li><a href="mailto:{{ . }}"><i class="fas fa-fw fa-envelope" aria-hidden="true"></i> Email</a></li>
+        {{ end }}
+        {{ with .Site.Params.twitter }}
+          <li><a href="https://twitter.com/{{ . }}"><i class="fab fa-fw fa-twitter-square" aria-hidden="true"></i> Twitter</a></li>
+        {{ end }}
+        {{ with .Site.Params.linkedin }}
+          <li><a href="https://www.linkedin.com/in/{{ . }}"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i> LinkedIn</a></li>
+        {{ end }}
+        {{ with .Site.Params.instagram }}
+          <li><a href="https://instagram.com/{{ . }}"><i class="fab fa-fw fa-instagram" aria-hidden="true"></i> Instagram</a></li>
+        {{ end }}
+        {{ with .Site.Params.github }}
+          <li><a href="https://github.com/{{ . }}"><i class="fab fa-fw fa-github" aria-hidden="true"></i> Github</a></li>
+        {{ end }}
+        {{ with .Site.Params.googlescholar }}
+          <li><a href="{{ . }}"><i class="fas fa-fw fa-graduation-cap"></i> Google Scholar</a></li>
+        {{ end }}
+      </ul>
+      <div class="author__urls_sm">
+        {{ with .Site.Params.email }}
+          <a href="mailto:{{ . }}"><i class="fas fa-fw fa-envelope" aria-hidden="true"></i></a>
+        {{ end }}
+        {{ with .Site.Params.twitter }}
+          <a href="https://twitter.com/{{ . }}"><i class="fab fa-fw fa-twitter-square" aria-hidden="true"></i></a>
+        {{ end }}
+        {{ with .Site.Params.linkedin }}
+          <a href="https://www.linkedin.com/in/{{ . }}"><i class="fab fa-fw fa-linkedin" aria-hidden="true"></i></a>
+        {{ end }}
+        {{ with .Site.Params.instagram }}
+          <a href="https://instagram.com/{{ . }}"><i class="fab fa-fw fa-instagram" aria-hidden="true"></i></a>
+        {{ end }}
+        {{ with .Site.Params.github }}
+          <a href="https://github.com/{{ . }}"><i class="fab fa-fw fa-github" aria-hidden="true"></i></a>
+        {{ end }}
+        {{ with .Site.Params.googlescholar }}
+          <a href="{{ . }}"><i class="fas fa-fw fa-graduation-cap"></i></a>
+        {{ end }}
+      </div>
+    </div>
+  </div>
+</div>

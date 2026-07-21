@@ -1,0 +1,16 @@
+<!-- begin SEO -->
+{{ $seoUrl := .Site.BaseURL }}
+{{ $canonical := .Permalink }}
+
+<title>{{ .Site.Title }} - Homepage</title>
+
+<meta property="og:locale" content="en">
+<meta property="og:site_name" content="{{ .Site.Title }}">
+<meta property="og:title" content="{{ .Title | default .Site.Title }}">
+
+<link rel="canonical" href="{{ $canonical }}">
+<meta property="og:url" content="{{ $canonical }}">
+
+{{ with .Description }}<meta property="og:description" content="{{ . }}">{{ end }}
+{{ with .Params.google_site_verification }}<meta name="google-site-verification" content="{{ . }}">{{ end }}
+<!-- end SEO -->

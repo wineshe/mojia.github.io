@@ -1,0 +1,68 @@
+baseURL = "https://yarden.cn"
+languageCode = "en-US"
+title = "Jinxiang Xie"
+
+# Outputs
+disableKinds = ["taxonomy", "term"]
+enableRobotsTXT = true
+
+[outputs]
+  home = ["HTML"]
+  section = ["HTML", "RSS"]
+  page = ["HTML"]
+
+[params]
+  author = "Jinxiang Xie"
+  description = "Personal homepage of Jinxiang Xie, featuring research, publications, and contact information."
+  github = "jxtse"
+  twitter = "JinxiangTse"
+  linkedin = "jinxiang-xie"
+  instagram = "richardtse_"
+  email = "jxTse@outlook.com"
+  googlescholar = "https://scholar.google.com/citations?user=00fFhxQAAAAJ"
+  avatar = "/images/android-chrome-512x512.jpg"
+  bio = "Nanjing University"
+  location = "Nanjing, China"
+  repository = "wineshe/mojia.github.io"
+  google_scholar_stats_use_cdn = true
+
+[markup]
+  [markup.goldmark]
+    [markup.goldmark.renderer]
+      unsafe = true
+
+[sitemap]
+  changefreq = "monthly"
+  filename = "sitemap.xml"
+  priority = 0.5
+
+[frontmatter]
+  date = [":filename", "date"]
+
+[permalinks]
+  blog = "/blog/:title/"
+
+# Navigation menu
+[[menus.main]]
+  title = "about"
+  url = "/#about-me"
+
+[[menus.main]]
+  title = "publications"
+  url = "/#-publications"
+
+[[menus.main]]
+  title = "Open Source"
+  url = "/#-open-source"
+
+[[menus.main]]
+  title = "educations"
+  url = "/#-educations"
+
+[[menus.main]]
+  title = "internships"
+  url = "/#-internships"
+
+[[menus.main]]
+  title = "blogs"
+  url = "/#-blogs"

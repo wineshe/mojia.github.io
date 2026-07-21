@@ -1,0 +1,32 @@
+{{ $posts := where site.RegularPages "Section" "blog" }}
+{{ $sorted := sort $posts "Date" "desc" }}
+{{ $latest := first 9 $sorted }}
+
+<div class="local-blogs-section">
+  <div class="local-blogs-header">
+    <h3><i class="fas fa-pen-nib"></i> Latest Posts</h3>
+    <a href="/blog/" class="view-all-btn">
+      View All Posts <i class="fas fa-arrow-right"></i>
+    </a>
+  </div>
+  <div class="blog-grid">
+    {{ range $latest }}
+    <a href="{{ .RelPermalink }}" class="blog-card-link">
+      <div class="blog-card">
+        <div class="blog-card-image">
+          <div class="blog-badge">{{ .Date.Format "January, 2006" }}</div>
+          {{ if .Params.cover_image }}
+          <img src="{{ .Params.cover_image | relURL }}" alt="{{ .Title }}">
+          {{ else }}
+          <img src="/images/default-blog-cover.jpg" alt="{{ .Title }}">
+          {{ end }}
+        </div>
+        <div class="blog-card-content">
+          <div class="blog-title">{{ .Title }}</div>
+          <div class="blog-description">{{ .Params.description | default (.Summary | plainify | truncate 120) }}</div>
+        </div>
+      </div>
+    </a>
+    {{ end }}
+  </div>
+</div>

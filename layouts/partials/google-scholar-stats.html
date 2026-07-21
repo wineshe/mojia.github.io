@@ -1,0 +1,20 @@
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    $(document).ready(function () {
+        {{ if .Site.Params.google_scholar_stats_use_cdn }}
+        var gsDataBaseUrl = 'https://cdn.jsdelivr.net/gh/{{ .Site.Params.repository }}@'
+        {{ else }}
+        var gsDataBaseUrl = 'https://raw.githubusercontent.com/{{ .Site.Params.repository }}/'
+        {{ end }}
+        $.getJSON(gsDataBaseUrl + "google-scholar-stats/gs_data.json", function (data) {
+            var totalCitation = data['citedby']
+            document.getElementById('total_cit').innerHTML = totalCitation;
+            var citationEles = document.getElementsByClassName('show_paper_citations')
+            Array.prototype.forEach.call(citationEles, element => {
+                var paperId = element.getAttribute('data')
+                var numCitations = data['publications'][paperId]['num_citations']
+                element.innerHTML = '| Citations: ' + numCitations;
+            });
+        });
+    })
+</script>
