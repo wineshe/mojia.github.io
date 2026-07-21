@@ -5,14 +5,14 @@
         <button class="hidden" aria-label="Toggle navigation menu"><div class="navicon"></div></button>
         <ul class="visible-links">
           <li class="masthead__menu-item masthead__menu-item--lg masthead__menu-home-item">
-            <a href="/#about-me">Homepage</a>
+            <a href="/#about-me" target="_self">Homepage</a>
           </li>
 
-          <li class="masthead__menu-item"><a href="/#-publications">publications</a></li>
-          <li class="masthead__menu-item"><a href="/#-open-source">Open Source</a></li>
-          <li class="masthead__menu-item"><a href="/#-educations">educations</a></li>
-          <li class="masthead__menu-item"><a href="/#-internships">internships</a></li>
-          <li class="masthead__menu-item"><a href="/#-blogs">blogs</a></li>
+          <li class="masthead__menu-item"><a class="menu-link-bold" href="/#-publications" target="_self"><strong>publications</strong></a></li>
+          <li class="masthead__menu-item"><a class="menu-link-bold" href="/#-open-source" target="_self"><strong>Open Source</strong></a></li>
+          <li class="masthead__menu-item"><a class="menu-link-bold" href="/#-educations" target="_self"><strong>educations</strong></a></li>
+          <li class="masthead__menu-item"><a class="menu-link-bold" href="/#-internships" target="_self"><strong>internships</strong></a></li>
+          <li class="masthead__menu-item"><a class="menu-link-bold" href="/#-blogs" target="_self"><strong>blogs</strong></a></li>
         </ul>
         <ul class="hidden-links hidden"></ul>
       </nav>
@@ -25,8 +25,7 @@ document.addEventListener('DOMContentLoaded', function() {
   document.querySelectorAll('.masthead__menu-item a[href^="/#"]').forEach(function(a) {
     a.addEventListener('click', function(e) {
       e.preventDefault();
-      var id = this.getAttribute('href').replace('#', '');
-      // If we're on a different page, navigate first
+      var id = this.getAttribute('href').replace(/^\/?#/, '');
       if (window.location.pathname !== '/') {
         window.location.href = '/#' + id;
         return;

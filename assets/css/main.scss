@@ -204,6 +204,11 @@ h1:before, .anchor:before {
    Blog post — left-aligned layout with wider TOC
    ========================================================================== */
 
+/* Bold masthead menu items */
+.masthead__menu-item a.menu-link-bold strong {
+  font-weight: 700;
+}
+
 article.page.post-article {
   float: none !important;
   width: auto !important;
