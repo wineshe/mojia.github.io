@@ -66,4 +66,17 @@
 
 {{ partial "scripts.html" . }}
 {{ partial "footer.html" . }}
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  document.querySelectorAll('#TableOfContents a').forEach(function(a) {
+    a.addEventListener('click', function(e) {
+      e.preventDefault();
+      var id = this.getAttribute('href').replace('#', '');
+      var target = document.getElementById(id);
+      if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    });
+  });
+});
+</script>
 {{ end }}
