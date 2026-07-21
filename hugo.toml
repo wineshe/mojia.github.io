@@ -12,15 +12,15 @@ enableRobotsTXT = true
 
 [params]
   author = "Yarden Zhang"
-  description = "Personal homepage of Jinxiang Xie, featuring research, publications, and contact information."
-  github = "jxtse"
-  twitter = "JinxiangTse"
-  linkedin = "jinxiang-xie"
-  instagram = "richardtse_"
-  email = "jxTse@outlook.com"
-  googlescholar = "https://scholar.google.com/citations?user=00fFhxQAAAAJ"
+  description = "Personal homepage of Yarden Zhang, featuring research, publications, and contact information."
+  github = ""
+  twitter = ""
+  linkedin = ""
+  instagram = ""
+  email = "wineshe@qq.com"
+  googlescholar = "https://"
   avatar = "/images/android-chrome-512x512.jpg"
-  bio = "Nanjing University"
+  bio = "Personal Homepage"
   location = "Beijing, China"
   repository = "wineshe/mojia.github.io"
   google_scholar_stats_use_cdn = true
