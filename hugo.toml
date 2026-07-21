@@ -66,3 +66,4 @@ enableRobotsTXT = true
 [[menus.main]]
   title = "blogs"
   url = "/#-blogs"
+
