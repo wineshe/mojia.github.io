@@ -1,51 +1,63 @@
 {{ define "main" }}
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
-<article class="post-article" itemscope itemtype="http://schema.org/BlogPosting">
-  <meta itemprop="headline" content="{{ .Title }}">
-  <meta itemprop="datePublished" content="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">
+{{ partial "browser-upgrade.html" . }}
+{{ partial "header.html" . }}
 
-  <header class="post-header">
-    {{ with .Params.cover_image }}
-    <div class="post-cover">
-      <img src="{{ . | relURL }}" alt="{{ $.Title }}">
+<div id="main" role="main" style="padding-bottom: 3em;">
+  {{ partial "sidebar.html" . }}
+
+  <article class="page" itemscope itemtype="http://schema.org/BlogPosting">
+    <meta itemprop="headline" content="{{ .Title }}">
+    <meta itemprop="datePublished" content="{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}">
+
+    <div class="page__inner-wrap">
+      <header class="post-header">
+        {{ with .Params.cover_image }}
+        <div class="post-cover">
+          <img src="{{ . | relURL }}" alt="{{ $.Title }}">
+        </div>
+        {{ end }}
+
+        <h1 class="post-title" itemprop="name">{{ .Title }}</h1>
+
+        {{ with .Params.description }}
+        <p class="post-description">{{ . }}</p>
+        {{ end }}
+
+        <div class="post-meta">
+          <span class="post-date post-meta-item">
+            <i class="fas fa-calendar-alt"></i>
+            <time datetime="{{ $.Date.Format "2006-01-02T15:04:05Z07:00" }}">{{ $.Date.Format "January 02, 2006" }}</time>
+          </span>
+
+          {{ with .Params.original_url }}
+          <span class="post-meta-separator" aria-hidden="true">|</span>
+          <a href="{{ . }}" class="post-original-link post-meta-item" target="_blank" rel="noopener noreferrer">
+            <i class="fas fa-external-link-alt"></i>
+            Original Post
+          </a>
+          {{ end }}
+
+          {{ with .Params.categories }}
+          <span class="post-meta-separator" aria-hidden="true">|</span>
+          <span class="post-categories post-meta-item">
+            <i class="fas fa-folder"></i>
+            <span class="post-categories-list">
+              {{ range $i, $cat := . }}{{ if $i }}, {{ end }}{{ $cat }}{{ end }}
+            </span>
+          </span>
+          {{ end }}
+        </div>
+      </header>
+
+      <section class="post-content" itemprop="articleBody">
+        {{ .Content }}
+      </section>
     </div>
-    {{ end }}
+  </article>
+</div>
 
-    <h1 class="post-title" itemprop="name">{{ .Title }}</h1>
-
-    {{ with .Params.description }}
-    <p class="post-description">{{ . }}</p>
-    {{ end }}
-
-    <div class="post-meta">
-      <span class="post-date post-meta-item">
-        <i class="fas fa-calendar-alt"></i>
-        <time datetime="{{ $.Date.Format "2006-01-02T15:04:05Z07:00" }}">{{ $.Date.Format "January 02, 2006" }}</time>
-      </span>
-
-      {{ with .Params.original_url }}
-      <span class="post-meta-separator" aria-hidden="true">|</span>
-      <a href="{{ . }}" class="post-original-link post-meta-item" target="_blank" rel="noopener noreferrer">
-        <i class="fas fa-external-link-alt"></i>
-        Original Post
-      </a>
-      {{ end }}
-
-      {{ with .Params.categories }}
-      <span class="post-meta-separator" aria-hidden="true">|</span>
-      <span class="post-categories post-meta-item">
-        <i class="fas fa-folder"></i>
-        <span class="post-categories-list">
-          {{ range $i, $cat := . }}{{ if $i }}, {{ end }}{{ $cat }}{{ end }}
-        </span>
-      </span>
-      {{ end }}
-    </div>
-  </header>
-
-  <section class="post-content" itemprop="articleBody">
-    {{ .Content }}
-  </section>
-</article>
+{{ partial "scripts.html" . }}
+{{ partial "footer.html" . }}
 {{ end }}
