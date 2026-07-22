@@ -12,7 +12,7 @@ enableRobotsTXT = true
 
 [params]
   author = "Yarden Zhang"
-  description = "叶定轩的个人主页，展示研究、发表成果和联系方式。"
+  description = "个人主页，展示研究、发表成果和联系方式。"
   github = ""
   twitter = ""
   linkedin = ""
@@ -21,7 +21,7 @@ enableRobotsTXT = true
   googlescholar = "https://"
   avatar = "/images/android-chrome-512x512.jpg"
   bio = "个人主页"
-  location = "北京，中国"
+  location = "Beijing，China"
   repository = "wineshe/mojia.github.io"
   google_scholar_stats_use_cdn = true
 
