@@ -12,7 +12,7 @@
           <li class="masthead__menu-item nav-section"><a class="menu-link-bold" href="/#educations" target="_self"><strong>教育经历</strong></a></li>
           <li class="masthead__menu-item nav-section"><a class="menu-link-bold" href="/#internships" target="_self"><strong>实习经历</strong></a></li>
           <li class="masthead__menu-item nav-section"><a class="menu-link-bold" href="/#open-source" target="_self"><strong>开源项目</strong></a></li>
-          <li class="masthead__menu-item"><a class="menu-link-bold" href="/blog/" target="_self"><strong>博客</strong></a></li>
+          <li class="masthead__menu-item"><a class="menu-link-bold" href="/#blogs" target="_self"><strong>博客</strong></a></li>
         </ul>
         <ul class="hidden-links hidden"></ul>
       </nav>
@@ -27,7 +27,12 @@ document.addEventListener('DOMContentLoaded', function() {
       e.preventDefault();
       var id = this.getAttribute('href').replace(/^\/?#/, '');
       if (window.location.pathname !== '/') {
-        window.location.href = '/#' + id;
+        // 博客链接在非首页页面跳转到列表页
+        if (id === 'blogs') {
+          window.location.href = '/blog/';
+        } else {
+          window.location.href = '/#' + id;
+        }
         return;
       }
       var target = document.getElementById(id);
