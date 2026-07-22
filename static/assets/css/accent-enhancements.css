@@ -125,6 +125,13 @@
   transform: scale(1.05);
 }
 
+/* 页面内 h1/h2/h3 标题颜色与图标主色一致 */
+.page__content h1,
+.page__content h2,
+.page__content h3 {
+  color: #012F63;
+}
+
 /* Sidebar图标保持主色 */
 .sidebar .fas, .sidebar .fab, .sidebar .far,
 .author__urls .fas, .author__urls .fab, .author__urls .far {
@@ -299,28 +306,9 @@
   }
 }
 
-/* 防止深色模式影响 - 强制浅色主题 */
-@media (prefers-color-scheme: dark) {
-  .floating-card, .highlight-block, .paper-box, .quote-accent {
-    background: #ffffff !important;
-    color: #012F63 !important;
-    border-color: rgba(1, 47, 99, 0.08) !important;
-  }
-  
-  .floating-card *, .highlight-block *, .paper-box *, .quote-accent * {
-    color: #012F63 !important;
-  }
-  
-  .floating-card a, .highlight-block a, .paper-box a, .quote-accent a {
-    color: #012F63 !important;
-  }
-  
-  .floating-card a:hover, .highlight-block a:hover, .paper-box a:hover, .quote-accent a:hover {
-    color: #1a4f8a !important;
-  }
-}
-
-/* 滚动触发动画 */
+/* ============================================================
+   滚动触发动画
+   ============================================================ */
 .fade-in-up {
   opacity: 0;
   transform: translateY(30px);
@@ -351,17 +339,25 @@
 body {
   background-color: #ffffff !important;
   color: #1a1a1a !important;
-  font-family: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-family: 'Source Serif 4', 'Noto Serif SC', "PingFang SC", "Microsoft YaHei", "Noto Sans SC", serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 .highlight-block, .paper-box, .floating-card, blockquote, .quote-accent {
   background: #ffffff !important;
-  color: #012F63 !important;
+  color: #1a1a1a !important;
 }
 
 .highlight-block *, .paper-box *, .floating-card *, blockquote *, .quote-accent * {
+  color: #1a1a1a !important;
+}
+
+/* 但卡片内的标题（h3）与图标颜色保持蓝色一致 */
+.highlight-block h3, .floating-card h3 {
+  color: #012F63 !important;
+}
+.highlight-block h3 i, .floating-card h3 i {
   color: #012F63 !important;
 }
 
