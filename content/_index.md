@@ -14,7 +14,7 @@ description: ""
 我的研究方向是利用 <span class="primary-gradient-text">大语言模型</span> 解决复杂问题。
 </div>
 
-欢迎随时联系我讨论研究或探讨潜在合作！
+<span class="primary-gradient-text">欢迎随时联系我讨论研究或探讨潜在合作！</span>
 
 <div class="highlight-blocks">
   <div class="highlight-block floating-card">

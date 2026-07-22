@@ -1,8 +1,265 @@
-<button id="back-to-top" title="Back to top" aria-label="Back to top">
+<button id="dark-mode-toggle" title="切换深色/浅色模式" aria-label="Toggle dark/light mode">
+  <svg class="sun-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+  <svg class="moon-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+</button>
+
+<button id="back-to-top" title="返回顶部" aria-label="Back to top">
   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="18 15 12 9 6 15"/></svg>
 </button>
 
 <style>
+/* ============================================================
+   Light / Dark Mode CSS Variables
+   ============================================================ */
+:root {
+  --dm-bg: #ffffff;
+  --dm-bg-secondary: #f8f9fa;
+  --dm-text: #1a1a1a;
+  --dm-text-secondary: #2d2d2d;
+  --dm-text-muted: #6b7280;
+  --dm-border: rgba(0,0,0,0.08);
+  --dm-card-bg: #ffffff;
+  --dm-code-bg: #f0f0f0;
+  --dm-pre-bg: #f6f8fa;
+  --dm-table-stripe: #f6f8fa;
+  --dm-hover-bg: #f9fafb;
+  --dm-shadow: rgba(0,0,0,0.04);
+  --dm-primary: #012F63;
+  --dm-accent: #c2714f;
+}
+html.dark {
+  --dm-bg: #0f1419;
+  --dm-bg-secondary: #161d26;
+  --dm-text: #e1e8ed;
+  --dm-text-secondary: #c4cfd8;
+  --dm-text-muted: #8899a6;
+  --dm-border: rgba(255,255,255,0.08);
+  --dm-card-bg: #1a2332;
+  --dm-code-bg: #1e2a3a;
+  --dm-pre-bg: #1a2332;
+  --dm-table-stripe: #1a2332;
+  --dm-hover-bg: #1e2a3a;
+  --dm-shadow: rgba(0,0,0,0.2);
+  --dm-primary: #4a9eff;
+  --dm-accent: #e8937a;
+}
+
+/* Apply dark mode variables — override !important light theme */
+body {
+  background-color: var(--dm-bg) !important;
+  color: var(--dm-text) !important;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Override forced white backgrounds in dark mode */
+html.dark .floating-card,
+html.dark .highlight-block,
+html.dark .paper-box,
+html.dark .pub-item,
+html.dark .blog-card,
+html.dark .quote-accent {
+  background: var(--dm-card-bg) !important;
+  border-color: var(--dm-border) !important;
+}
+html.dark .quote-accent {
+  color: var(--dm-text) !important;
+}
+html.dark .quote-accent .primary-gradient-text {
+  background: linear-gradient(135deg, var(--dm-primary) 0%, var(--dm-accent) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+html.dark .pub-authors { color: var(--dm-text-muted) !important; }
+html.dark .pub-description { color: var(--dm-text-muted) !important; }
+html.dark .blog-description { color: var(--dm-text-muted) !important; }
+html.dark .post-meta { color: var(--dm-text-muted) !important; }
+
+html.dark .pub-item h3,
+html.dark .post-title,
+html.dark .blog-title,
+html.dark .local-blogs-header h3,
+html.dark .paper-box-text h3 {
+  color: var(--dm-text) !important;
+}
+
+html.dark .post-content { color: var(--dm-text-secondary) !important; }
+html.dark .post-content h1,
+html.dark .post-content h2,
+html.dark .post-content h3,
+html.dark .post-content h4,
+html.dark .post-content h5,
+html.dark .post-content h6 { color: var(--dm-text) !important; }
+/* Section header colors in dark mode — match icon color */
+html.dark .page__content h1,
+html.dark .page__content h2,
+html.dark .page__content h3 {
+  color: var(--dm-primary) !important;
+}
+/* Card h3 headings in dark mode — same as section headers */
+html.dark .highlight-block h3,
+html.dark .highlight-block h3 i,
+html.dark .floating-card h3,
+html.dark .floating-card h3 i {
+  color: var(--dm-primary) !important;
+}
+
+/* TOC sidebar dark mode — transparent background, match page */
+html.dark .sidebar__right.toc-container {
+  background: transparent !important;
+  border-color: var(--dm-border) !important;
+}
+html.dark .sidebar__right.toc-container .toc-title,
+html.dark .sidebar__right.toc-container .toc-title i {
+  color: var(--dm-text) !important;
+}
+html.dark .sidebar__right.toc-container #TableOfContents a {
+  color: var(--dm-text-secondary) !important;
+}
+html.dark .sidebar__right.toc-container #TableOfContents a:hover {
+  color: var(--dm-primary) !important;
+}
+html.dark .post-content blockquote { color: var(--dm-text-muted) !important; }
+html.dark .post-content code { background: var(--dm-code-bg); color: var(--dm-text); }
+html.dark .post-content pre { background: var(--dm-pre-bg); border-color: var(--dm-border); color: var(--dm-text); }
+html.dark .post-content th { background: var(--dm-table-stripe); color: var(--dm-text); }
+html.dark .post-content td { border-color: var(--dm-border); }
+html.dark .post-content tr:hover { background: var(--dm-hover-bg); }
+html.dark .post-content a { color: var(--dm-primary); }
+
+html.dark .paper-box-text p { color: var(--dm-text-secondary) !important; }
+html.dark .paper-box-text .authors { color: var(--dm-primary) !important; }
+html.dark .paper-box-text .venue { color: var(--dm-text-muted) !important; }
+html.dark .paper-box-image { background: var(--dm-bg-secondary) !important; }
+html.dark .masthead { background: var(--dm-bg) !important; }
+html.dark .page__content a:hover { color: var(--dm-accent) !important; }
+
+html.dark .post-header { border-bottom-color: var(--dm-border) !important; }
+html.dark .post-content th { border-bottom-color: var(--dm-border) !important; }
+html.dark .post-content td { border-bottom-color: var(--dm-border) !important; }
+html.dark .post-content pre { border-color: var(--dm-border) !important; }
+html.dark .post-content table { border-color: var(--dm-border) !important; }
+
+html.dark .fas, html.dark .fab, html.dark .far { color: var(--dm-primary) !important; }
+html.dark .sidebar .fas, html.dark .sidebar .fab, html.dark .sidebar .far { color: var(--dm-primary) !important; }
+
+/* ============================================================
+   Dark mode fixes for header nav, links, and card headings
+   ============================================================ */
+
+/* Issue 1: Header nav link colors */
+html.dark .masthead a,
+html.dark .greedy-nav a {
+  color: var(--dm-text) !important;
+}
+html.dark .masthead a:hover,
+html.dark .greedy-nav a:hover {
+  color: var(--dm-accent) !important;
+}
+html.dark .greedy-nav { background: transparent !important; }
+html.dark .masthead { border-bottom-color: var(--dm-border) !important; }
+
+/* Issue 3: link-accent text readability in dark mode */
+html.dark .link-accent {
+  color: var(--dm-primary) !important;
+}
+html.dark .link-accent:hover {
+  color: var(--dm-accent) !important;
+}
+
+/* Override forced navy text from accent-enhancements.css */
+html.dark .highlight-block,
+html.dark .highlight-block *,
+html.dark .floating-card,
+html.dark .floating-card *,
+html.dark blockquote,
+html.dark blockquote * {
+  color: var(--dm-text) !important;
+}
+/* But preserve gradient text in dark mode */
+html.dark .highlight-block .accent-text,
+html.dark .floating-card .accent-text,
+html.dark .highlight-block .primary-gradient-text,
+html.dark .floating-card .primary-gradient-text {
+  -webkit-text-fill-color: transparent !important;
+  background-clip: text !important;
+}
+/* Allow icons to use primary color instead of plain text color */
+html.dark .highlight-block .fas,
+html.dark .highlight-block .fab,
+html.dark .highlight-block .far,
+html.dark .floating-card .fas,
+html.dark .floating-card .fab,
+html.dark .floating-card .far {
+  color: var(--dm-primary) !important;
+}
+
+/* Paragraph text in dark mode */
+html.dark .page__content p {
+  color: var(--dm-text-secondary) !important;
+}
+
+/* Sidebar dark mode */
+html.dark .sidebar,
+html.dark .author__content,
+html.dark .author__name,
+html.dark .author__bio,
+html.dark .author__urls,
+html.dark .author__urls li,
+html.dark .author__urls li a,
+html.dark .profile_box {
+  color: var(--dm-text) !important;
+  background: transparent !important;
+}
+html.dark .author__urls li a:hover {
+  color: var(--dm-accent) !important;
+}
+html.dark .sidebar.sticky .author__urls-wrapper {
+  border-color: var(--dm-border) !important;
+}
+html.dark .profile_box {
+  border-color: var(--dm-border) !important;
+}
+
+/* Dark mode toggle button — positioned above back-to-top */
+#dark-mode-toggle {
+  position: fixed;
+  bottom: calc(2rem + 48px + 8px);
+  right: 2rem;
+  z-index: 100;
+  width: 40px;
+  height: 40px;
+  border: none;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #012F63 0%, #1a4f8a 100%);
+  color: #fff;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(1,47,99,0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.25s ease, transform 0.25s ease, box-shadow 0.2s, background 0.3s;
+  -webkit-font-smoothing: antialiased;
+}
+#dark-mode-toggle:hover {
+  background: #c2714f;
+  box-shadow: 0 4px 14px rgba(254,102,123,0.3);
+  transform: translateY(-2px);
+}
+html.dark #dark-mode-toggle {
+  background: linear-gradient(135deg, #1a2332 0%, #2a3a5a 100%);
+}
+html.dark #dark-mode-toggle:hover {
+  background: #c2714f;
+}
+#dark-mode-toggle svg {
+  transition: transform 0.3s ease;
+}
+#dark-mode-toggle:hover svg {
+  transform: rotate(30deg);
+}
+
+/* Back to top button */
 #back-to-top {
   position: fixed;
   bottom: 2rem;
@@ -39,6 +296,38 @@
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {
+  // --- Dark Mode Toggle ---
+  var dmBtn = document.getElementById('dark-mode-toggle');
+  var sunIcon = dmBtn.querySelector('.sun-icon');
+  var moonIcon = dmBtn.querySelector('.moon-icon');
+
+  function setTheme(dark) {
+    document.documentElement.classList.toggle('dark', dark);
+    localStorage.setItem('theme', dark ? 'dark' : 'light');
+    sunIcon.style.display = dark ? 'none' : 'block';
+    moonIcon.style.display = dark ? 'block' : 'none';
+  }
+
+  // Restore preference from localStorage, fallback to system preference
+  var stored = localStorage.getItem('theme');
+  if (stored) {
+    setTheme(stored === 'dark');
+  } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+    setTheme(true);
+  }
+
+  dmBtn.addEventListener('click', function() {
+    setTheme(!document.documentElement.classList.contains('dark'));
+  });
+
+  // Listen for system theme changes (only when no stored preference)
+  window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', function(e) {
+    if (!localStorage.getItem('theme')) {
+      setTheme(e.matches);
+    }
+  });
+
+  // --- Back to Top ---
   var btn = document.getElementById('back-to-top');
   if (!btn) return;
   var toggle = function() { btn.classList.toggle('is-visible', window.scrollY > 300); };
