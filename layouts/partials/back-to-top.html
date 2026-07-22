@@ -76,11 +76,20 @@ html.dark .blog-description { color: var(--dm-text-muted) !important; }
 html.dark .post-meta { color: var(--dm-text-muted) !important; }
 
 html.dark .pub-item h3,
+html.dark .pub-item h3 a,
 html.dark .post-title,
 html.dark .blog-title,
 html.dark .local-blogs-header h3,
 html.dark .paper-box-text h3 {
-  color: var(--dm-text) !important;
+  color: #fff !important;
+}
+/* pub-item link buttons and their icons — white in dark mode */
+html.dark .pub-links a,
+html.dark .pub-links a i,
+html.dark .pub-links a .fas,
+html.dark .pub-links a .fab,
+html.dark .pub-links a .far {
+  color: #fff !important;
 }
 
 html.dark .post-content { color: var(--dm-text-secondary) !important; }
@@ -90,11 +99,14 @@ html.dark .post-content h3,
 html.dark .post-content h4,
 html.dark .post-content h5,
 html.dark .post-content h6 { color: var(--dm-text) !important; }
-/* Section header colors in dark mode — match icon color */
+/* Section header colors in dark mode — white to match button text */
 html.dark .page__content h1,
 html.dark .page__content h2,
-html.dark .page__content h3 {
-  color: var(--dm-primary) !important;
+html.dark .page__content h3,
+html.dark .page__content h1 .fas,
+html.dark .page__content h2 .fas,
+html.dark .page__content h3 .fas {
+  color: #fff !important;
 }
 /* Card h3 headings in dark mode — same as section headers */
 html.dark .highlight-block h3,
