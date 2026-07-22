@@ -1,10 +1,10 @@
 ---
 
-title: "Prompt Engineering: How to Better Ask LLMs"
+title: "提示词工程：如何更好地向大模型提问"
 date: 2023-08-24
-description: "Introduce a number of methods for optimizing the output of large language models and reducing the probability of irrelevant or incorrect responses."
+description: "介绍多种优化大语言模型输出、减少无关或错误回答概率的方法。"
 cover_image: /images/pic01.jpg
-categories: [AI, Tutorial]
+categories: [AI, 教程]
 original_url: https://sspai.com/post/82322
 ---
 

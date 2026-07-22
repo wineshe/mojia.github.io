@@ -1,10 +1,10 @@
 ---
 
-title: "The Limits of My Language Mean the Limits of My World"
+title: "我语言的边界就是我世界的边界"
 date: 2025-06-01
-description: "Drawing on Wittgenstein's philosophy, a recent paper argues that our existing language might be the fundamental bottleneck."
+description: "借鉴维特根斯坦的哲学，一篇近期论文认为我们现有的语言可能是理解AI的根本瓶颈。"
 cover_image: /images/2025-06-01-the-limits-of-my-language-mean-the-limits-of-my-world/0.jpg
-categories: [Life, Travel]
+categories: [生活, 旅行]
 original_url: https://mp.weixin.qq.com/s/pomI-HLyVpOitxor-7hTDQ
 ---
 

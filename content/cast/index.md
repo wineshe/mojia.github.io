@@ -9,12 +9,12 @@ author_profile: false
 <div class="project-container">
 
   <header class="project-header">
-    <div class="project-venue-badge"><i class="fas fa-award"></i> ACL 2026 Findings</div>
-    <h1 class="project-title">CAST: Achieving Stable LLM-based Text Analysis for Data Analytics</h1>
-    <div class="project-subtitle">Consistency via Algorithmic Prompting and Stable Thinking</div>
+    <div class="project-venue-badge"><i class="fas fa-award"></i> ACL 2026  Findings 论文集</div>
+    <h1 class="project-title">CAST：实现基于LLM的稳定文本分析以支持数据分析</h1>
+    <div class="project-subtitle">通过算法提示与稳定思维实现一致性</div>
 
     <p class="pp-hero-tagline">
-      LLM-based text analysis is unstable across runs — a deal-breaker for data analytics. <strong>CAST</strong> constrains the latent reasoning path to deliver consistent, deterministic-grade outputs without sacrificing quality.
+      基于LLM的文本分析在不同运行轮次间不稳定，这对数据分析而言是不可接受的。<strong>CAST</strong>通过约束潜在推理路径，在不牺牲质量的前提下提供一致且近乎确定性的输出。
     </p>
     
     <div class="project-authors">
@@ -26,132 +26,132 @@ author_profile: false
       Dongmei Zhang<sup>4</sup>
     </div>
     <div class="affiliations">
-      <sup>1</sup>Nanjing University &nbsp;|&nbsp;
-      <sup>2</sup>Tsinghua University &nbsp;|&nbsp;
-      <sup>3</sup>Peking University &nbsp;|&nbsp;
-      <sup>4</sup>Microsoft Research
+      <sup>1</sup>南京大学 &nbsp;|&nbsp;
+      <sup>2</sup>清华大学 &nbsp;|&nbsp;
+      <sup>3</sup>北京大学 &nbsp;|&nbsp;
+      <sup>4</sup>微软研究院
     </div>
 
     <div class="links-bar">
-      <a href="https://arxiv.org/abs/2602.15861" class="btn-arxiv" target="_blank"><i class="fas fa-file-alt"></i> Paper</a>
-      <a href="https://arxiv.org/pdf/2602.15861" class="btn-pdf" target="_blank"><i class="fas fa-file-pdf"></i> PDF</a>
-      <a href="https://github.com/jxtse/CAST-text-analysis" class="btn-code" target="_blank"><i class="fab fa-github"></i> Code</a>
+      <a href="https://arxiv.org/abs/2602.15861" class="btn-arxiv" target="_blank"><i class="fas fa-file-alt"></i> 论文</a>
+      <a href="https://arxiv.org/pdf/2602.15861" class="btn-pdf" target="_blank"><i class="fas fa-file-pdf"></i> 全文</a>
+      <a href="https://github.com/jxtse/CAST-text-analysis" class="btn-code" target="_blank"><i class="fab fa-github"></i> 代码</a>
     </div>
   </header>
 
   <section class="teaser-section">
     <img src="/images/cast-fig2-framework.png" alt="CAST Framework Overview" class="teaser-image">
     <div class="teaser-caption">
-      <strong>Figure 1:</strong> Overview of the CAST framework. Traditional methods (left) operate with uncontrolled reasoning paths, resulting in wide, high-entropy output distributions. CAST (right) mitigates instability via Algorithmic Prompting and Thinking-before-Speaking, collapsing the generation process into a sharply concentrated output distribution.
+      <strong>图 1：</strong>CAST框架总览。传统方法（左）采用不受控的推理路径，导致输出分布宽泛且高熵。CAST（右）通过算法提示（Algorithmic Prompting）和三思而后言（Thinking-before-Speaking）缓解不稳定性，将生成过程压缩为集中尖峰状的输出分布。
     </div>
   </section>
 
   <section class="abstract-section">
-    <div class="abstract-title"><i class="fas fa-align-left"></i> Abstract</div>
+    <div class="abstract-title"><i class="fas fa-align-left"></i> 摘要</div>
     <div class="abstract-text">
-      Text analysis of tabular data relies on two core operations: <strong>summarization</strong> for corpus-level theme extraction and <strong>tagging</strong> for row-level labeling. A critical limitation of employing large language models (LLMs) for these tasks is their inability to meet the high standards of <em>output stability</em> demanded by data analytics.
+      表格数据的文本分析依赖两个核心操作：用于语料级主题提取的<strong>摘要（summarization）</strong>和用于行级标注的<strong>标记（tagging）</strong>。将这些任务交给大语言模型（LLM）的一个关键局限在于，它们无法达到数据分析所要求的<em>输出稳定性</em>的高标准。
       <br><br>
-      To address this challenge, we introduce <strong>CAST</strong> (<strong>C</strong>onsistency via <strong>A</strong>lgorithmic Prompting and <strong>S</strong>table <strong>T</strong>hinking), a framework that enhances output stability by constraining the model's latent reasoning path. CAST combines (i) <strong>Algorithmic Prompting</strong> to impose a procedural scaffold over valid reasoning transitions and (ii) <strong>Thinking-before-Speaking</strong> to enforce explicit intermediate commitments before final generation.
+      为解决这一问题，我们提出了<strong>CAST</strong>（<strong>C</strong>onsistency via <strong>A</strong>lgorithmic Prompting and <strong>S</strong>table <strong>T</strong>hinking，通过算法提示与稳定思维实现一致性），一个通过约束模型潜在推理路径来提升输出稳定性的框架。CAST结合了两种机制：（i）<strong>算法提示（Algorithmic Prompting）</strong>，为有效的推理转移提供程序化支架；（ii）<strong>三思而后言（Thinking-before-Speaking）</strong>，在最终生成之前强制明确显式的中间承诺。
       <br><br>
-      To measure progress, we introduce <strong>CAST-S</strong> and <strong>CAST-T</strong>, stability metrics for bulleted summarization and tagging, and validate their alignment with human judgments. Experiments across publicly available benchmarks on multiple LLM backbones show that CAST consistently achieves the best stability among all baselines, improving Stability Score by up to <strong>16.2%</strong>, while maintaining or improving output quality.
+      为衡量进展，我们引入了<strong>CAST-S</strong>和<strong>CAST-T</strong>——分别面向要点式摘要和标记任务的稳定性评估指标，并验证了它们与人类判断的一致性。在多个LLM骨干网络上的公开基准测试实验表明，CAST在所有基线方法中始终取得最佳稳定性，稳定性评分最高提升<strong>16.2%</strong>，同时保持或提高了输出质量。
     </div>
   </section>
 
   <section class="project-section pp-fadeup">
-    <h2 class="section-title">Key Contributions</h2>
+    <h2 class="section-title">主要贡献</h2>
     <div class="pp-contrib-grid pp-fadeup-stagger">
       <div class="pp-contrib-card">
         <div class="pp-contrib-num">01</div>
-        <h3 class="pp-contrib-title">Formalization of TADA</h3>
-        <p class="pp-contrib-text">We formalize Text Analysis for Data Analysis (TADA) as a tabular-centric paradigm, highlighting <strong>stability as a functional necessity</strong> for integrating probabilistic LLM outputs into deterministic OLAP workflows.</p>
+        <h3 class="pp-contrib-title">TADA的形式化</h3>
+        <p class="pp-contrib-text">我们将面向数据分析的文本分析（TADA）形式化为一个以表格为中心的新范式，强调<strong>稳定性作为功能上的必要条件</strong>，以将概率性LLM输出集成到确定性的OLAP工作流中。</p>
       </div>
       <div class="pp-contrib-card">
         <div class="pp-contrib-num">02</div>
-        <h3 class="pp-contrib-title">CAST Framework</h3>
-        <p class="pp-contrib-text">A novel approach that constrains generation via <strong>Algorithmic Prompting</strong> and intermediate commitments, reducing the entropy of latent paths without expensive search-based methods.</p>
+        <h3 class="pp-contrib-title">CAST框架</h3>
+        <p class="pp-contrib-text">一种通过<strong>算法提示</strong>和中间承诺约束生成过程的新方法，在不依赖昂贵的搜索方法的情况下降低潜在路径的熵。</p>
       </div>
       <div class="pp-contrib-card">
         <div class="pp-contrib-num">03</div>
-        <h3 class="pp-contrib-title">Stability Metrics</h3>
-        <p class="pp-contrib-text">We introduce <strong>CAST-S</strong> and <strong>CAST-T</strong>, stability-focused evaluation metrics combining semantic matching with order sensitivity (Kendall's Tau) to capture human-perceived consistency.</p>
+        <h3 class="pp-contrib-title">稳定性指标</h3>
+        <p class="pp-contrib-text">我们引入<strong>CAST-S</strong>和<strong>CAST-T</strong>，一种结合语义匹配与顺序敏感性（Kendall's Tau）的稳定性评估指标，以捕捉人类感知的一致性。</p>
       </div>
       <div class="pp-contrib-card">
         <div class="pp-contrib-num">04</div>
-        <h3 class="pp-contrib-title">Strong Empirical Results</h3>
-        <p class="pp-contrib-text">Up to <strong>16.2% improvement</strong> in Stability Score across multiple LLM backbones, with no regression in accuracy.</p>
+        <h3 class="pp-contrib-title">强实证结果</h3>
+        <p class="pp-contrib-text">在多个LLM骨干网络上实现最高<strong>16.2%的稳定性评分提升</strong>，且准确率无下降。</p>
       </div>
     </div>
   </section>
 
   <section class="project-section pp-fadeup">
-    <h2 class="section-title">Method</h2>
+    <h2 class="section-title">方法</h2>
     <p style="font-size: 1.05em; line-height: 1.7; color: #444; margin-bottom: 25px;">
-      CAST addresses the instability problem by constraining the LLM's latent reasoning trajectory through two complementary mechanisms:
+      CAST通过两种互补机制约束LLM的潜在推理轨迹来解决不稳定问题：
     </p>
     
     <div class="method-grid">
       <div class="method-card">
-        <h3><i class="fas fa-sitemap"></i> Algorithmic Prompting</h3>
-        <p>Specifies an algorithmic scaffold for the task, translating classic deterministic workflows into a structured prompt sequence. This scaffold acts as a strong prior over valid reasoning transitions, effectively pruning high-entropy paths.</p>
+        <h3><i class="fas fa-sitemap"></i> 算法提示（Algorithmic Prompting）</h3>
+        <p>为任务指定一个算法化支架，将经典的确定性工作流转化为结构化的提示序列。该支架充当有效推理转移的强先验，从而有效剪枝高熵路径。</p>
       </div>
       <div class="method-card">
-        <h3><i class="fas fa-brain"></i> Thinking-before-Speaking</h3>
-        <p>Enforces the scaffold by requiring the model to produce well-defined intermediate states (domain, topic schema, clusters) before emitting the final output. By committing to these states, the model follows a more stable reasoning path.</p>
+        <h3><i class="fas fa-brain"></i> 三思而后言（Thinking-before-Speaking）</h3>
+        <p>通过要求模型在输出最终结果之前产生明确定义的中间状态（领域、主题模式、聚类）来强制执行支架。通过提交这些中间状态，模型遵循一条更稳定的推理路径。</p>
       </div>
     </div>
 
     <div class="figure-block">
       <img src="/images/cast-fig1-tada.png" alt="TADA Operations">
       <div class="figure-caption">
-        <strong>Figure 2:</strong> Illustration of the summarization and tagging operations for TADA. These atomic operations can be composed and reused in complex TADA tasks.
+        <strong>图 2：</strong>TADA中摘要与标记操作示意图。这些原子操作可以组合复用于复杂的TADA任务中。
       </div>
     </div>
   </section>
 
   <section class="project-section pp-fadeup">
-    <h2 class="section-title">Empirical Observation</h2>
+    <h2 class="section-title">实证观察</h2>
     <p style="font-size: 1.05em; line-height: 1.7; color: #444; margin-bottom: 20px;">
-      We empirically demonstrate that requiring relevant intermediate states demonstrably sharpens the model's output distribution. As shown below, CAST produces the sharpest and most concentrated distribution, indicating substantially improved run-to-run stability.
+      我们通过实验证明，要求相关的中间状态确实能显著锐化模型的输出分布。如下所示，CAST产生了最尖锐、最集中的分布，表明运行间稳定性得到了实质性提升。
     </p>
     
     <div class="figure-block">
       <img src="/images/cast-fig3-kde.png" alt="Output Length Stability">
       <div class="figure-caption">
-        <strong>Figure 3:</strong> Output-length stability under different prompting strategies. KDE-smoothed distributions of summary length compare (i) direct prompting, (ii) irrelevant intermediate states, (iii) relevant intermediate states, and (iv) the full CAST prompt. CAST produces the sharpest distribution with outputs tightly clustered around a central value.
+        <strong>图 3：</strong>不同提示策略下的输出长度稳定性。经KDE平滑后的摘要长度分布比较了：（i）直接提示、（ii）不相关中间状态、（iii）相关中间状态和（iv）完整CAST提示。CAST产生了最尖锐的分布，输出紧密围绕一个中心值。
       </div>
     </div>
   </section>
 
   <section class="project-section pp-fadeup">
-    <h2 class="section-title">Results</h2>
+    <h2 class="section-title">实验结果</h2>
     
     <div class="results-grid">
       <div class="result-item">
         <div class="result-number">16.2%</div>
-        <div class="result-label">Maximum Stability Score Improvement</div>
+        <div class="result-label">稳定性评分最大提升</div>
       </div>
       <div class="result-item">
         <div class="result-number">32</div>
-        <div class="result-label">Dataset-Query Pairs Evaluated</div>
+        <div class="result-label">数据集-查询对评估</div>
       </div>
       <div class="result-item">
         <div class="result-number">5,100+</div>
-        <div class="result-label">Items Across 4 Diverse Domains</div>
+        <div class="result-label">涵盖4个不同领域的项目</div>
       </div>
     </div>
 
     <div class="figure-block">
       <img src="/images/cast-fig4-tagging.png" alt="Tagging Pipeline">
       <div class="figure-caption">
-        <strong>Figure 4:</strong> The CAST framework for tagging, illustrating a pipeline that begins with query decomposition and domain identification to guide the core algorithmic prompting stage, and concludes with output validation.
+        <strong>图 4：</strong>用于标记任务的CAST框架，展示了从查询分解和领域识别开始，引导核心算法提示阶段，并以输出验证结束的流水线。
       </div>
     </div>
   </section>
 
   <section class="project-section pp-fadeup">
-    <h2 class="section-title">Citation</h2>
+    <h2 class="section-title">引用</h2>
     <div class="bibtex-section">
-      <button class="bibtex-copy-btn" onclick="navigator.clipboard.writeText(this.nextElementSibling.innerText);this.textContent='Copied!';setTimeout(()=>this.textContent='Copy',2000);">Copy</button>
+      <button class="bibtex-copy-btn" onclick="navigator.clipboard.writeText(this.nextElementSibling.innerText);this.textContent='已复制';setTimeout(()=>this.textContent='复制',2000);">复制</button>
       <div class="bibtex-code">@misc{xie2026castachievingstablellmbased,
       title={CAST: Achieving Stable LLM-based Text Analysis for Data Analytics}, 
       author={Jinxiang Xie and Zihao Li and Wei He and Rui Ding and Shi Han and Dongmei Zhang},
@@ -166,7 +166,7 @@ author_profile: false
 
   <section class="project-section" style="margin-top: 50px; padding-top: 30px; border-top: 1px solid #e1e4e8;">
     <p style="font-size: 0.9em; color: #666; line-height: 1.6;">
-      <strong>Acknowledgments:</strong> This work was done during the author's internship at Microsoft Research. We thank all colleagues and mentors from the DKI group for their support and valuable feedback.
+      <strong>致谢：</strong>本研究是在作者于微软研究院实习期间完成的。感谢DKI小组的所有同事和导师的支持与宝贵反馈。
     </p>
   </section>
 

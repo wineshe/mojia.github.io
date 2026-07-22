@@ -1,6 +1,6 @@
 ---
-title: "Blog"
-description: "All blog posts"
+title: "博客"
+description: "全部博客文章"
 author_profile: true
 ---
 
@@ -8,6 +8,6 @@ author_profile: true
 
 <span class='anchor' id='blog-list'></span>
 
-# <i class="fas fa-blog"></i> All Posts
+# <i class="fas fa-blog"></i> 全部文章
 
 {{< blog-list-all >}}

@@ -1,10 +1,10 @@
 ---
 
-title: "Wind Over the Hills: There But for the Grace of God Go I"
+title: "风轻轻拂过半山腰：若非上帝恩典，我亦如是"
 date: 2024-12-08
-description: "Two weeks volunteering at a lakeside cafe in Yunnan, and reflections on freedom, labor, rural life, and how privilege shapes our sense of possibility."
+description: "在云南湖边咖啡馆做义工两周，反思自由、劳动、乡村生活，以及特权如何塑造我们的可能性认知。"
 cover_image: /images/2024-12-08-but-for-the-grace-of-god-go-i/640.jpg
-categories: [Life, Travel]
+categories: [生活, 旅行]
 original_url: "https://mp.weixin.qq.com/s/Pz8GQZ_lv6o4PesgHM0T6Q"
 ---
 # 风轻轻拂过半山腰

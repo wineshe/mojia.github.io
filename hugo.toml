@@ -1,5 +1,5 @@
 baseURL = "https://yarden.cn"
-languageCode = "en-US"
+languageCode = "zh-CN"
 title = "Yarden Zhang"
 
 disableKinds = ["taxonomy", "term"]
@@ -12,7 +12,7 @@ enableRobotsTXT = true
 
 [params]
   author = "Yarden Zhang"
-  description = "Personal homepage of Yarden Zhang, featuring research, publications, and contact information."
+  description = "叶定轩的个人主页，展示研究、发表成果和联系方式。"
   github = ""
   twitter = ""
   linkedin = ""
@@ -20,8 +20,8 @@ enableRobotsTXT = true
   email = "wineshe@qq.com"
   googlescholar = "https://"
   avatar = "/images/android-chrome-512x512.jpg"
-  bio = "Personal Homepage"
-  location = "Beijing, China"
+  bio = "个人主页"
+  location = "北京，中国"
   repository = "wineshe/mojia.github.io"
   google_scholar_stats_use_cdn = true
 
