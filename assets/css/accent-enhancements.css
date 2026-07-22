@@ -339,7 +339,7 @@
 body {
   background-color: #ffffff !important;
   color: #1a1a1a !important;
-  font-family: 'Source Serif 4', 'Noto Serif SC', "PingFang SC", "Microsoft YaHei", "Noto Sans SC", serif;
+  font-family: Georgia, 'Noto Serif CJK SC', 'Source Han Serif SC', 'Songti SC', STSong, SimSun, serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
